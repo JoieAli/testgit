@@ -11,10 +11,20 @@ on:
         default: "joiejiang"
   schedule:
     - cron: "0 0 1 1 *"
+defaults:
+  run:
+    shell: csh
+    working-directory: /home
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
     steps:
+      - name: show working space
+        run: pwd
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
