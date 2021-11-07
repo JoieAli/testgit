@@ -4,6 +4,13 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      name:
+        description: "person to kick off"
+        required: true
+        default: "joiejiang"
+  schedule:
+    - cron: "0 0 1 1 *"
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
