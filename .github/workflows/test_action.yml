@@ -13,15 +13,11 @@ on:
     - cron: "0 0 1 1 *"
 defaults:
   run:
-    shell: csh
+    shell: pwsh
     working-directory: /home
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ../
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -36,6 +32,10 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
   my-actions:
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: bash
+        working-directory: ../
     steps:
       - name: show working space
         run: |
