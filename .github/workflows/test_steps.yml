@@ -38,17 +38,7 @@ jobs:
         working-directory: /home
         shell: bash
       - name: action3
-        if: step.action1.outcome == "true"
+        if: steps.action1.outcome == "true"
         run: |
           echo ${NAME} success
           echo current directory: ${PWD}
-          
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
