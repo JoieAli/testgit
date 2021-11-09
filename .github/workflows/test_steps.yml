@@ -39,7 +39,7 @@ jobs:
         shell: bash
         id: action2
       - name: action3
-        if: steps.action1.outcome == "success"
+        if: steps.action1.outcome == 'success'
         run: |
           echo last step: ${{steps.action2.outcome}}
           echo ${NAME} success
